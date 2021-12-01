@@ -1,12 +1,13 @@
 with open("1_input.txt", "r") as infile:
-    values = infile.read().splitlines()
+    values = infile.read().split("\n")
+
 
 # simple loop
 increased_count = 0
 for a, b in zip(values[1:], values[:-1]):
-    if b > a:
+    if int(a) > int(b):
         increased_count += 1
 print(increased_count)
 
 # more elegant mapping:
-print(sum(map(lambda x: x[1] > x[0], zip(values[1:], values[:-1]))))
+print(sum(map(lambda val: int(val[0]) > int(val[1]), zip(values[1:], values[:-1]))))
