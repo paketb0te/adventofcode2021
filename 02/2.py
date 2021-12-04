@@ -1,6 +1,3 @@
-from os import linesep
-
-
 with open("input.txt", "r") as infile:
     lines = infile.read().splitlines()
 
